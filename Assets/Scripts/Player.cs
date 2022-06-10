@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] PlayerMovement myMovement;
+    [SerializeField] PlayerMovement myMovement = null;
+    [SerializeField] PlayerHandsRotation myHands = null;
 
     void Update()
     {
         myMovement.HandleMovement();
         myMovement.HandleFlipping();
+        myHands.HandleRotating(myMovement.isFacingRight);
     }
 }

@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] [Range(1f, 25f)] float speed = 10f;
 
-    bool isFacingRight = true;
+    public bool isFacingRight = true;
     float horizontalSpeed = 0f;
     float verticalSpeed = 0f;
 
