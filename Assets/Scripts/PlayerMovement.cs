@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] [Range(1f, 25f)] float speed = 10f;
-    [SerializeField] SpriteRenderer myPlayerSprite;
 
     bool isFacingRight = true;
     float horizontalSpeed = 0f;
@@ -26,11 +25,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isFacingRight)
         {
-            myPlayerSprite.flipX = false;
+            gameObject.transform.localScale = new Vector3(1, 1, 1);
         }
         else
         {
-            myPlayerSprite.flipX = true;
+            gameObject.transform.localScale = new Vector3(-1, 1, 1);
         }
     }
 }
