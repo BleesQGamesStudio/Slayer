@@ -11,8 +11,13 @@ public class PlayerMovement : MonoBehaviour
 
     public void HandleMovement()
     {        
-        horizontalSpeed = Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime;
-        verticalSpeed = Input.GetAxisRaw("Vertical") * speed * Time.deltaTime;
-        transform.Translate(horizontalSpeed, verticalSpeed, 0, Space.World);
+        horizontalSpeed = Input.GetAxisRaw("Horizontal");
+        verticalSpeed = Input.GetAxisRaw("Vertical");
+
+        Vector2 direction = new Vector2(horizontalSpeed, verticalSpeed);
+        direction.Normalize();
+        direction *= speed * Time.deltaTime;
+
+        transform.Translate(direction, Space.World);
     }
 }
