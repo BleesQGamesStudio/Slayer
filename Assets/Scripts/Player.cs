@@ -5,12 +5,11 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] PlayerMovement myMovement = null;
-    [SerializeField] PlayerHandsRotation myHands = null;
+    [SerializeField] PlayerRotation myRotation = null;
 
-    void Update()
+    void FixedUpdate()
     {
         myMovement.HandleMovement();
-        myMovement.HandleFlipping();
-        myHands.HandleRotating(myMovement.isFacingRight);
+        myRotation.HandleRotating();
     }
 }
