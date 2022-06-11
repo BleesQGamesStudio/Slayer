@@ -6,30 +6,18 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] [Range(1f, 25f)] float speed = 10f;
 
-    public bool isFacingRight = true;
     float horizontalSpeed = 0f;
     float verticalSpeed = 0f;
 
     public void HandleMovement()
     {        
-        horizontalSpeed = Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime;
-        verticalSpeed = Input.GetAxisRaw("Vertical") * speed * Time.deltaTime;
+        horizontalSpeed = Input.GetAxisRaw("Horizontal");
+        verticalSpeed = Input.GetAxisRaw("Vertical");
 
-        if (horizontalSpeed > 0) isFacingRight = true;
-        else if (horizontalSpeed < 0) isFacingRight = false;
+        Vector2 direction = new Vector2(horizontalSpeed, verticalSpeed);
+        direction.Normalize();
+        direction *= speed * Time.deltaTime;
 
-        transform.Translate(horizontalSpeed, verticalSpeed, 0);
-    }
-
-    public void HandleFlipping()
-    {
-        if (isFacingRight)
-        {
-            gameObject.transform.localScale = new Vector3(1, 1, 1);
-        }
-        else
-        {
-            gameObject.transform.localScale = new Vector3(-1, 1, 1);
-        }
+        transform.Translate(direction, Space.World);
     }
 }
