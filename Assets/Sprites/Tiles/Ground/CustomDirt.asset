@@ -173,6 +173,7 @@ MonoBehaviour:
     - {x: 0, y: -1, z: 0}
     - {x: 1, y: -1, z: 0}
     m_RuleTransform: 0
+  alwaysConnect: 0
   grass:
   - {fileID: 11400000, guid: 8881eff809476d842a01bc2568f457ef, type: 2}
   dirt:
