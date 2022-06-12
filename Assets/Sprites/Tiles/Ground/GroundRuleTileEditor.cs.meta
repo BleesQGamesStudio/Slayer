@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 19f6ea9957591fb40b4a309c39dfd458
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_PreviewGrid: {instanceID: 0}
+  - Grass: {fileID: 2800000, guid: f462447117d13e04fac29bdfbcce8f01, type: 3}
+  - Dirt: {fileID: 2800000, guid: 0bcd056b2451e6c4b9956714acf8674f, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
