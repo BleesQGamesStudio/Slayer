@@ -477,7 +477,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1260174023}
   - component: {fileID: 1260174022}
-  m_Layer: 0
+  - component: {fileID: 1260174025}
+  - component: {fileID: 1260174024}
+  m_Layer: 7
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -551,6 +553,43 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1260174024
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260174021}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!70 &1260174025
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260174021}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1, y: 2}
+  m_Direction: 0
 --- !u!114 &1566344824 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4703661853312795867, guid: b722a118f89139c45a8b61a18cce8113, type: 3}
@@ -5401,7 +5440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8847675025809501564, guid: 7bde6dd92cd2d0c42bc7c0ed2610bf53, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8847675025809501564, guid: 7bde6dd92cd2d0c42bc7c0ed2610bf53, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5442,10 +5481,6 @@ PrefabInstance:
     - target: {fileID: 8847675025809501567, guid: 7bde6dd92cd2d0c42bc7c0ed2610bf53, type: 3}
       propertyPath: m_Name
       value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 8847675026015077829, guid: 7bde6dd92cd2d0c42bc7c0ed2610bf53, type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bde6dd92cd2d0c42bc7c0ed2610bf53, type: 3}
