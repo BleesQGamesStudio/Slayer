@@ -5,42 +5,39 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour, IDamageable<float>
 {
-    [SerializeField] Canvas healthBarCanvas = null;
-    [SerializeField] Vector2 healthBarOffset = Vector2.zero;
-    [SerializeField] float maxHealth = 1f;
-    float currentHealth = 0;
+    public float maxHealth = 100f;
+    public float currentHealth;
+    public Slider healthSlider;
 
-    Canvas myCanvas = null;
-
-    private void Awake()
+    void Start()
     {
-        myCanvas = GameObject.Instantiate(healthBarCanvas, transform.position, Quaternion.identity);
-        myCanvas.transform.SetParent(gameObject.transform);
-
-        currentHealth = maxHealth;    
+        currentHealth = maxHealth;
+        healthSlider.maxValue = maxHealth;
+        healthSlider.value = currentHealth;
     }
 
-    private void Update()
+    public void TakeDamage(float damageAmount)
     {
-        // TODO:
-        // Dodać Offset jako osobną Funkcję lub do Awake
-        // myCanvas.GetComponentInChildren<GameObject>().transform.position = healthBarOffset;
-        // Debug.Log(myCanvas);
-        // Debug.Log(myCanvas.GetComponentInChildren<RectTransform>().localPosition);
-        // var pos = myCanvas.GetComponentInChildren<RectTransform>().position;
-        // pos = healthBarOffset;
-    }
+        currentHealth -= damageAmount;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        healthSlider.value = currentHealth;
 
-    public void TakeDamage(float amount)
-    {
-        currentHealth -= amount;
-        Debug.Log($"Uderzono {gameObject} za {amount}");
+        if (currentHealth <= 0)
+        {
+            Debug.Log("Death");
+            Kill();
+        }
     }
 
     public void Heal(float amount)
     {
         currentHealth += amount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-        Debug.Log($"Uleczono {gameObject} za {amount}");
+        healthSlider.value = currentHealth;
+    }
+
+    public void Kill()
+    {
+        Destroy(gameObject);
     }
 }
