@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 8045041057772188394}
   - component: {fileID: 8004177226496071252}
   - component: {fileID: 4703661853312795867}
+  - component: {fileID: 4162099473688340719}
   - component: {fileID: 6803820884154474160}
   - component: {fileID: 3951577908274561433}
   m_Layer: 6
@@ -172,6 +173,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myMovement: {fileID: 6803820884154474160}
   myRotation: {fileID: 3951577908274561433}
+--- !u!114 &4162099473688340719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8045041057772188397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5274b96ecb1bc134fbfb9297cf18e84c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBarCanvas: {fileID: 8717275630745353398, guid: 94ab908595ae6ba4a819ff00ac708a65, type: 3}
+  healthBarOffset: {x: 0, y: 0}
+  maxHealth: 1
 --- !u!114 &6803820884154474160
 MonoBehaviour:
   m_ObjectHideFlags: 0

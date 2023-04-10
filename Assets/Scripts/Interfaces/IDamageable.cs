@@ -5,4 +5,6 @@ using UnityEngine;
 public interface IDamageable<T>
 {
     void TakeDamage(T amount);
+    void Heal(T amount);
+    void Kill();
 }
